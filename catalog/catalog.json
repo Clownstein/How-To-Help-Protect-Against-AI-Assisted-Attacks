@@ -1,0 +1,374 @@
+{
+  "schema_version": 1,
+  "reviewed": "2026-09-28",
+  "project": "How-to-help-protect-against-ai-attacks",
+  "egress": {
+    "description": "Hosted inference destinations. Every entry is a DNS name or URL path; addresses are never used for egress blocking because the endpoints sit on shared CDN and cloud address space.",
+    "tiers": {
+      "core": "Provider-documented inference endpoints for the most widely used frontier and hosted-model APIs.",
+      "extended": "Provider-documented or directory-listed inference endpoints for additional hosted-model vendors and aggregators.",
+      "candidate": "Hostnames that resolved on the review date and appear in vendor quickstarts or provider directories. Confirm each against the vendor's current documentation before enforcement."
+    },
+    "profiles": {
+      "recommended": ["core", "extended"],
+      "full": ["core", "extended", "candidate"]
+    },
+    "match_types": {
+      "host": "The exact hostname. Products that cannot express an exact match apply their narrowest available form.",
+      "subdomains": "Any hostname below the listed domain, for example tenant-specific resource names.",
+      "label_suffix": "Any hostname whose first label ends with the listed suffix, for example REGION-aiplatform.googleapis.com. List-only products receive the enumerated regional names instead.",
+      "url_path": "A host and URL path. Only products that inspect decrypted HTTP requests can enforce these entries."
+    },
+    "entries": [
+      {"value": "api.anthropic.com", "match": "host", "tier": "core", "provider": "Anthropic", "service": "Claude API", "source": "https://platform.claude.com/docs/en/api/overview"},
+      {"value": "api.openai.com", "match": "host", "tier": "core", "provider": "OpenAI", "service": "OpenAI API", "source": "https://inspect.aisi.org.uk/providers.html"},
+      {"value": "generativelanguage.googleapis.com", "match": "host", "tier": "core", "provider": "Google", "service": "Gemini API", "source": "https://inspect.aisi.org.uk/providers.html"},
+      {"value": "openai.azure.com", "match": "subdomains", "tier": "core", "provider": "Microsoft", "service": "Azure OpenAI resource endpoints", "source": "https://learn.microsoft.com/en-us/azure/ai-studio/ai-services/concepts/endpoints"},
+      {"value": "api.cohere.com", "match": "host", "tier": "core", "provider": "Cohere", "service": "Cohere API", "source": "https://inspect.aisi.org.uk/providers.html"},
+      {"value": "api.mistral.ai", "match": "host", "tier": "core", "provider": "Mistral AI", "service": "Mistral API", "source": "https://inspect.aisi.org.uk/providers.html"},
+      {"value": "api.together.xyz", "match": "host", "tier": "core", "provider": "Together AI", "service": "Together inference API", "source": "https://www.together.ai/serverless-inference"},
+      {"value": "api.groq.com", "match": "host", "tier": "core", "provider": "Groq", "service": "GroqCloud API", "source": "https://inspect.aisi.org.uk/providers.html"},
+      {"value": "api.fireworks.ai", "match": "host", "tier": "core", "provider": "Fireworks AI", "service": "Fireworks inference API", "source": "https://inspect.aisi.org.uk/providers.html"},
+
+      {"value": "api.perplexity.ai", "match": "host", "tier": "extended", "provider": "Perplexity", "service": "Sonar API", "source": "https://inspect.aisi.org.uk/providers.html"},
+      {"value": "api.deepseek.com", "match": "host", "tier": "extended", "provider": "DeepSeek", "service": "DeepSeek API", "source": "https://inspect.aisi.org.uk/providers.html"},
+      {"value": "api.x.ai", "match": "host", "tier": "extended", "provider": "xAI", "service": "Grok API", "source": "https://inspect.aisi.org.uk/providers.html"},
+      {"value": "api.moonshot.ai", "match": "host", "tier": "extended", "provider": "Moonshot AI", "service": "Kimi API (international)", "source": "https://inspect.aisi.org.uk/providers.html"},
+      {"value": "api.moonshot.cn", "match": "host", "tier": "extended", "provider": "Moonshot AI", "service": "Kimi API (mainland China)", "source": "https://inspect.aisi.org.uk/providers.html"},
+      {"value": "api.meta.ai", "match": "host", "tier": "extended", "provider": "Meta", "service": "Llama API", "source": "https://inspect.aisi.org.uk/providers.html"},
+      {"value": "api.cerebras.ai", "match": "host", "tier": "extended", "provider": "Cerebras", "service": "Cerebras inference API", "source": "https://inference-docs.cerebras.ai/resources/openai"},
+      {"value": "api.sambanova.ai", "match": "host", "tier": "extended", "provider": "SambaNova", "service": "SambaNova Cloud API", "source": "https://inspect.aisi.org.uk/providers.html"},
+      {"value": "openrouter.ai", "match": "host", "tier": "extended", "provider": "OpenRouter", "service": "OpenRouter aggregation API", "source": "https://inspect.aisi.org.uk/providers.html"},
+      {"value": "router.huggingface.co", "match": "host", "tier": "extended", "provider": "Hugging Face", "service": "Inference Providers router", "source": "https://huggingface.co/docs/inference-providers/index"},
+      {"value": "api.together.ai", "match": "host", "tier": "extended", "provider": "Together AI", "service": "Together inference API (alternate host)", "source": "https://www.together.ai/serverless-inference"},
+      {"value": "cognitiveservices.azure.com", "match": "subdomains", "tier": "extended", "provider": "Microsoft", "service": "Azure AI Services resource endpoints", "source": "https://inspect.aisi.org.uk/providers.html"},
+      {"value": "services.ai.azure.com", "match": "subdomains", "tier": "extended", "provider": "Microsoft", "service": "Microsoft Foundry resource endpoints", "source": "https://learn.microsoft.com/en-us/azure/ai-studio/ai-services/concepts/endpoints"},
+      {"value": "aiplatform.googleapis.com", "match": "host", "tier": "extended", "provider": "Google", "service": "Vertex AI / Gemini Enterprise Agent Platform global endpoint", "source": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/machine-learning/general/googleapi-access-methods"},
+      {"value": "aiplatform.us.rep.googleapis.com", "match": "host", "tier": "extended", "provider": "Google", "service": "Vertex AI regional endpoint (United States multi-region)", "source": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/resources/locations"},
+      {"value": "aiplatform.eu.rep.googleapis.com", "match": "host", "tier": "extended", "provider": "Google", "service": "Vertex AI regional endpoint (European Union multi-region)", "source": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/resources/locations"},
+      {"value": "-aiplatform.googleapis.com", "match": "label_suffix", "tier": "extended", "provider": "Google", "service": "Vertex AI regional endpoints (REGION-aiplatform.googleapis.com)", "source": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/resources/locations", "enumerate": "vertex_regions"},
+      {"value": "api.cloudflare.com/client/v4/accounts/*/ai/run", "match": "url_path", "tier": "extended", "provider": "Cloudflare", "service": "Workers AI REST API", "source": "https://inspect.aisi.org.uk/providers.html", "note": "api.cloudflare.com also serves the rest of the Cloudflare API; never block the host itself."},
+
+      {"value": "api.replicate.com", "match": "host", "tier": "candidate", "provider": "Replicate", "service": "Replicate API", "source": "https://huggingface.co/docs/inference-providers/index"},
+      {"value": "api.ai21.com", "match": "host", "tier": "candidate", "provider": "AI21 Labs", "service": "AI21 Studio API", "source": "sections/02-inference-providers.md"},
+      {"value": "api.novita.ai", "match": "host", "tier": "candidate", "provider": "Novita AI", "service": "Novita inference API", "source": "https://huggingface.co/docs/inference-providers/index"},
+      {"value": "api.deepinfra.com", "match": "host", "tier": "candidate", "provider": "DeepInfra", "service": "DeepInfra inference API", "source": "https://huggingface.co/docs/inference-providers/index"},
+      {"value": "api.featherless.ai", "match": "host", "tier": "candidate", "provider": "Featherless AI", "service": "Featherless inference API", "source": "https://huggingface.co/docs/inference-providers/index"},
+      {"value": "api.hyperbolic.xyz", "match": "host", "tier": "candidate", "provider": "Hyperbolic", "service": "Hyperbolic inference API", "source": "sections/02-inference-providers.md"},
+      {"value": "inference.baseten.co", "match": "host", "tier": "candidate", "provider": "Baseten", "service": "Baseten model APIs", "source": "https://huggingface.co/docs/inference-providers/index"},
+      {"value": "api.voyageai.com", "match": "host", "tier": "candidate", "provider": "Voyage AI", "service": "Voyage embeddings API", "source": "sections/02-inference-providers.md"},
+      {"value": "api.jina.ai", "match": "host", "tier": "candidate", "provider": "Jina AI", "service": "Jina API", "source": "sections/02-inference-providers.md"},
+      {"value": "queue.fal.run", "match": "host", "tier": "candidate", "provider": "fal", "service": "fal queue API", "source": "https://huggingface.co/docs/inference-providers/index"},
+      {"value": "api.stability.ai", "match": "host", "tier": "candidate", "provider": "Stability AI", "service": "Stability API", "source": "sections/02-inference-providers.md"},
+      {"value": "api.writer.com", "match": "host", "tier": "candidate", "provider": "Writer", "service": "Writer API", "source": "sections/02-inference-providers.md"},
+      {"value": "api.upstage.ai", "match": "host", "tier": "candidate", "provider": "Upstage", "service": "Upstage Solar API", "source": "sections/02-inference-providers.md"},
+      {"value": "dashscope.aliyuncs.com", "match": "host", "tier": "candidate", "provider": "Alibaba Cloud", "service": "DashScope / Qwen API (mainland China)", "source": "sections/02-inference-providers.md"},
+      {"value": "dashscope-intl.aliyuncs.com", "match": "host", "tier": "candidate", "provider": "Alibaba Cloud", "service": "DashScope / Qwen API (international)", "source": "sections/02-inference-providers.md"},
+      {"value": "open.bigmodel.cn", "match": "host", "tier": "candidate", "provider": "Zhipu AI / Z.ai", "service": "GLM API", "source": "https://huggingface.co/docs/inference-providers/index"},
+      {"value": "api.minimax.io", "match": "host", "tier": "candidate", "provider": "MiniMax", "service": "MiniMax API (international)", "source": "sections/02-inference-providers.md"},
+      {"value": "api.minimaxi.com", "match": "host", "tier": "candidate", "provider": "MiniMax", "service": "MiniMax API (mainland China)", "source": "sections/02-inference-providers.md"},
+      {"value": "api.siliconflow.com", "match": "host", "tier": "candidate", "provider": "SiliconFlow", "service": "SiliconFlow API (international)", "source": "sections/02-inference-providers.md"},
+      {"value": "api.siliconflow.cn", "match": "host", "tier": "candidate", "provider": "SiliconFlow", "service": "SiliconFlow API (mainland China)", "source": "sections/02-inference-providers.md"},
+      {"value": "api.friendli.ai", "match": "host", "tier": "candidate", "provider": "FriendliAI", "service": "Friendli serverless endpoints", "source": "sections/02-inference-providers.md"},
+      {"value": "llm.chutes.ai", "match": "host", "tier": "candidate", "provider": "Chutes", "service": "Chutes LLM API", "source": "sections/02-inference-providers.md"},
+      {"value": "api.bfl.ai", "match": "host", "tier": "candidate", "provider": "Black Forest Labs", "service": "FLUX API", "source": "sections/02-inference-providers.md"},
+      {"value": "integrate.api.nvidia.com", "match": "host", "tier": "candidate", "provider": "NVIDIA", "service": "NVIDIA API Catalog (NIM)", "source": "sections/02-inference-providers.md"},
+      {"value": "inference.api.nscale.com", "match": "host", "tier": "candidate", "provider": "Nscale", "service": "Nscale serverless inference", "source": "https://huggingface.co/docs/inference-providers/index"},
+      {"value": "runpod.ai", "match": "subdomains", "tier": "candidate", "provider": "Runpod", "service": "Runpod serverless and public endpoints", "source": "sections/04-domain-denylist.md", "note": "Also matches customer GPU workloads; enforce only where Runpod is not an approved platform."},
+      {"value": "modal.run", "match": "subdomains", "tier": "candidate", "provider": "Modal", "service": "Modal web endpoints", "source": "sections/04-domain-denylist.md", "note": "Also matches customer applications hosted on Modal; enforce only where Modal is not an approved platform."}
+    ],
+    "bedrock": {
+      "provider": "Amazon Web Services",
+      "tier": "core",
+      "note": "Bedrock endpoints are enumerated from the AWS endpoint tables. Never block *.amazonaws.com or *.api.aws.",
+      "services": [
+        {
+          "service": "Amazon Bedrock Runtime",
+          "source": "https://docs.aws.amazon.com/general/latest/gr/bedrock.html",
+          "hosts": [
+            "bedrock-runtime.ap-northeast-1.amazonaws.com",
+            "bedrock-runtime.ap-northeast-2.amazonaws.com",
+            "bedrock-runtime.ap-northeast-3.amazonaws.com",
+            "bedrock-runtime.ap-south-1.amazonaws.com",
+            "bedrock-runtime.ap-south-2.amazonaws.com",
+            "bedrock-runtime.ap-southeast-1.amazonaws.com",
+            "bedrock-runtime.ap-southeast-2.amazonaws.com",
+            "bedrock-runtime.ca-central-1.amazonaws.com",
+            "bedrock-runtime.eu-central-1.amazonaws.com",
+            "bedrock-runtime.eu-central-2.amazonaws.com",
+            "bedrock-runtime.eu-north-1.amazonaws.com",
+            "bedrock-runtime.eu-south-1.amazonaws.com",
+            "bedrock-runtime.eu-south-2.amazonaws.com",
+            "bedrock-runtime.eu-west-1.amazonaws.com",
+            "bedrock-runtime.eu-west-2.amazonaws.com",
+            "bedrock-runtime.eu-west-3.amazonaws.com",
+            "bedrock-runtime.sa-east-1.amazonaws.com",
+            "bedrock-runtime.us-east-1.amazonaws.com",
+            "bedrock-runtime.us-east-2.amazonaws.com",
+            "bedrock-runtime.us-gov-east-1.amazonaws.com",
+            "bedrock-runtime.us-gov-west-1.amazonaws.com",
+            "bedrock-runtime.us-west-2.amazonaws.com",
+            "bedrock-runtime-fips.ca-central-1.amazonaws.com",
+            "bedrock-runtime-fips.us-east-1.amazonaws.com",
+            "bedrock-runtime-fips.us-east-2.amazonaws.com",
+            "bedrock-runtime-fips.us-gov-east-1.amazonaws.com",
+            "bedrock-runtime-fips.us-gov-west-1.amazonaws.com",
+            "bedrock-runtime-fips.us-west-2.amazonaws.com"
+          ]
+        },
+        {
+          "service": "Agents for Amazon Bedrock Runtime",
+          "source": "https://docs.aws.amazon.com/general/latest/gr/bedrock.html",
+          "hosts": [
+            "bedrock-agent-runtime.ap-northeast-1.amazonaws.com",
+            "bedrock-agent-runtime.ap-northeast-2.amazonaws.com",
+            "bedrock-agent-runtime.ap-south-1.amazonaws.com",
+            "bedrock-agent-runtime.ap-southeast-1.amazonaws.com",
+            "bedrock-agent-runtime.ap-southeast-2.amazonaws.com",
+            "bedrock-agent-runtime.ca-central-1.amazonaws.com",
+            "bedrock-agent-runtime.eu-central-1.amazonaws.com",
+            "bedrock-agent-runtime.eu-west-1.amazonaws.com",
+            "bedrock-agent-runtime.eu-west-2.amazonaws.com",
+            "bedrock-agent-runtime.eu-west-3.amazonaws.com",
+            "bedrock-agent-runtime.sa-east-1.amazonaws.com",
+            "bedrock-agent-runtime.us-east-1.amazonaws.com",
+            "bedrock-agent-runtime.us-west-2.amazonaws.com",
+            "bedrock-agent-runtime-fips.us-east-1.amazonaws.com",
+            "bedrock-agent-runtime-fips.us-west-2.amazonaws.com"
+          ]
+        },
+        {
+          "service": "Amazon Bedrock Mantle (OpenAI-compatible endpoints)",
+          "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/bedrock-mantle.html",
+          "hosts": [
+            "bedrock-mantle.ap-northeast-1.api.aws",
+            "bedrock-mantle.ap-south-1.api.aws",
+            "bedrock-mantle.ap-southeast-2.api.aws",
+            "bedrock-mantle.ap-southeast-3.api.aws",
+            "bedrock-mantle.eu-central-1.api.aws",
+            "bedrock-mantle.eu-north-1.api.aws",
+            "bedrock-mantle.eu-south-1.api.aws",
+            "bedrock-mantle.eu-west-1.api.aws",
+            "bedrock-mantle.eu-west-2.api.aws",
+            "bedrock-mantle.sa-east-1.api.aws",
+            "bedrock-mantle.us-east-1.api.aws",
+            "bedrock-mantle.us-east-2.api.aws",
+            "bedrock-mantle.us-gov-west-1.api.aws",
+            "bedrock-mantle.us-west-2.api.aws"
+          ]
+        }
+      ]
+    },
+    "vertex_regions": {
+      "source": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/resources/locations",
+      "regions": [
+        "asia-east1", "asia-east2", "asia-northeast1", "asia-northeast3", "asia-south1", "asia-southeast1",
+        "australia-southeast1",
+        "europe-central2", "europe-north1", "europe-southwest1", "europe-west1", "europe-west2", "europe-west3",
+        "europe-west4", "europe-west6", "europe-west8", "europe-west9",
+        "me-central1", "me-central2", "me-west1",
+        "northamerica-northeast1", "southamerica-east1",
+        "us-central1", "us-east1", "us-east4", "us-east5", "us-south1", "us-west1", "us-west4"
+      ]
+    },
+    "never_block": [
+      "googleapis.com",
+      "amazonaws.com",
+      "api.aws",
+      "azure.com",
+      "cloudflare.com",
+      "api.cloudflare.com",
+      "huggingface.co",
+      "aliyuncs.com"
+    ],
+    "observed_inference_addresses": {
+      "description": "A records resolved for inference hostnames on the review date, plus prefixes that serve inference endpoints: shared CDN and cloud front ends, and provider-published API ranges (Anthropic, https://platform.claude.com/docs/en/api/ip-addresses). No generated crawler list may cover them, so inbound crawler blocking never interferes with egress policy.",
+      "addresses": [
+        "160.79.104.10", "172.66.0.243", "162.159.140.245", "162.159.142.207", "172.66.2.203",
+        "104.18.43.158", "172.64.144.98", "104.18.38.236", "172.64.149.20", "104.18.27.48", "104.18.26.48",
+        "104.18.19.80", "104.18.18.80", "104.18.2.115", "104.18.3.115", "104.18.10.146", "104.18.11.146",
+        "104.18.28.136", "104.18.29.136", "104.18.3.60", "104.18.2.60", "104.20.38.76", "172.66.145.160",
+        "172.67.72.137", "104.26.6.127", "104.26.7.127", "104.18.31.126", "104.18.30.126",
+        "104.26.10.242", "104.26.11.242", "172.67.70.54", "104.18.34.224", "172.64.153.32",
+        "104.20.31.216", "172.66.167.93", "104.18.37.81", "172.64.150.175",
+        "172.217.112.4", "172.217.113.4", "172.217.114.4", "172.217.115.4", "172.217.116.4",
+        "172.217.117.4", "172.217.118.4", "172.217.119.4",
+        "34.96.76.122", "35.207.52.96", "35.244.129.243", "34.111.142.178", "34.91.100.50",
+        "3.173.21.63", "34.235.97.209", "3.223.245.77",
+        "3.162.103.113", "3.162.103.110", "3.162.103.127", "3.162.103.36",
+        "52.79.171.164", "54.117.8.238", "3.36.7.77", "3.33.246.183", "15.197.205.95",
+        "75.2.113.119", "99.83.136.103", "31.13.66.4", "23.205.106.147", "23.205.106.153", "23.205.106.168",
+        "38.101.151.13", "38.101.151.14", "38.101.151.15", "38.101.151.16", "38.101.151.17", "38.101.151.18",
+        "38.101.151.19", "38.101.151.20", "38.101.151.21", "38.101.151.22", "38.101.151.23", "38.101.151.24",
+        "38.101.151.25", "38.101.151.26", "38.101.151.27", "38.101.151.28", "38.101.151.29", "38.101.151.30",
+        "136.110.181.169", "35.253.220.11",
+        "8.140.217.18", "8.152.159.24", "39.96.198.249", "39.96.213.166",
+        "47.253.34.159", "47.253.242.212", "47.85.102.97", "47.85.105.126", "47.90.171.203", "150.171.109.72",
+        "8.147.223.37", "47.236.117.191", "47.236.175.160", "47.245.114.142", "47.79.117.67",
+        "47.239.184.63", "47.239.215.199",
+        "64.233.180.95", "142.251.163.95", "142.251.167.95", "192.178.218.95"
+      ],
+      "shared_prefixes": [
+        "104.16.0.0/12", "172.64.0.0/13", "172.66.0.0/16", "162.159.0.0/16", "160.79.104.0/21", "2607:6bc0::/48",
+        "44.225.0.0/16", "44.233.0.0/16", "44.235.0.0/16", "44.241.0.0/16", "52.13.0.0/16", "54.68.0.0/16"
+      ]
+    }
+  },
+  "anthropic_network": {
+    "description": "Address space registered to Anthropic, PBC (ARIN organization AP-2440) that was routed on the review date, plus the published outbound allocation that contains the routed API prefix. This is separate from the crawler feed at https://claude.com/crawling/bots.json. Allocations are not emitted whole when only part of them is routed, and a prefix is not emitted when ARIN assigns it to a different organization.",
+    "org_handle": "AP-2440",
+    "org_name": "Anthropic, PBC",
+    "do_not_emit": ["153.61.0.0/16", "2607:6bc0::/32", "209.249.57.0/24"],
+    "notes": [
+      "Organization: Anthropic, PBC, ARIN handle AP-2440 (https://whois.arin.net/rest/org/AP-2440). AS Rank lists the same organization (https://asrank.caida.org/orgs/b7403dc2df).",
+      "AS399358 (ANTHROPIC) originates 160.79.104.0/23, 2607:6bc0::/48, and 2607:6bc0:11::/48. AS400243, AS401551, and AS4167 are registered to the organization and originated nothing on the review date.",
+      "160.79.104.0/21 is both the ARIN allocation NET-160-79-104-0-1 and the outbound range Anthropic publishes. The API documentation names 160.79.104.0/23 inside it as the inbound range (https://platform.claude.com/docs/en/api/ip-addresses). Routing visibility on the review date was the /23.",
+      "2607:6bc0::/32 is the ARIN allocation ANTHROPIC-V6. Only 2607:6bc0::/48 (published as the API range) and 2607:6bc0:11::/48 (originated by AS399358, not named on the API page) were routed. The /32 is not emitted.",
+      "216.73.216.0/22 is ARIN net AWS-ANTHROPIC, registered to AP-2440 and announced by AS16509 (Amazon). It is already in the crawler feed. https://ipinfo.io/AS16509/216.73.216.0/22",
+      "153.61.0.0/16 is an ARIN direct allocation to AP-2440, registered 2026-06-17. The /16 itself was not announced. The routed portions were 153.61.192.0/23 (AS396982, Google Cloud), 153.61.196.0/24 (AS14618, Amazon), 153.61.197.0/24 (AS16509), and 153.61.198.0/24 (AS16509). Adjacent prefixes are collapsed in this file.",
+      "Excluded: AS60808 is registered to AP-2440 and originates 209.249.57.0/24 with a valid ROA, but ARIN assigns that net (NET-209-249-57-0-1, ZAYO-IPYX) to Mitel Networks, Inc. It is not treated as Anthropic address space.",
+      "POC ANTHR5-ARIN (arin@anthropic.com) is the admin, tech, routing, NOC, abuse, and DNS contact for AP-2440 (https://whois.arin.net/rest/poc/ANTHR5-ARIN). The contact record has no networks of its own. The nets query for AP-2440 returns only the four allocations described above."
+    ],
+    "prefixes": [
+      {"prefix": "160.79.104.0/21", "emit": true, "source": "https://whois.arin.net/rest/net/NET-160-79-104-0-1"},
+      {"prefix": "216.73.216.0/22", "emit": true, "source": "https://whois.arin.net/rest/net/NET-216-73-216-0-1"},
+      {"prefix": "153.61.192.0/23", "emit": true, "source": "https://stat.ripe.net/data/prefix-overview/data.json?resource=153.61.192.0/23"},
+      {"prefix": "153.61.196.0/24", "emit": true, "source": "https://stat.ripe.net/data/prefix-overview/data.json?resource=153.61.196.0/24"},
+      {"prefix": "153.61.197.0/24", "emit": true, "source": "https://stat.ripe.net/data/prefix-overview/data.json?resource=153.61.197.0/24"},
+      {"prefix": "153.61.198.0/24", "emit": true, "source": "https://stat.ripe.net/data/prefix-overview/data.json?resource=153.61.198.0/24"},
+      {"prefix": "2607:6bc0::/48", "emit": true, "source": "https://platform.claude.com/docs/en/api/ip-addresses"},
+      {"prefix": "2607:6bc0:11::/48", "emit": true, "source": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS399358"}
+    ]
+  },
+  "xai_network": {
+    "description": "Address space registered to X.AI CORP. (ARIN organization XAI). Prefixes announced by AS63179 are not included: that ASN is named XAI, but ARIN registers its prefixes to Twitter Inc.",
+    "org_handle": "XAI",
+    "org_name": "X.AI CORP.",
+    "do_not_emit": ["69.12.56.0/21", "192.48.236.0/23", "209.237.192.0/19"],
+    "notes": [
+      "Organization: X.AI CORP., ARIN handle XAI (https://whois.arin.net/rest/org/XAI). Its only ASN is AS400297 and its only net is NET-31-207-0-0-1.",
+      "31.207.0.0/24 is a direct allocation registered 2026-04-23 and announced by AS400297 (https://stat.ripe.net/data/prefix-overview/data.json?resource=31.207.0.0/24). api.x.ai resolves to Cloudflare anycast, so this prefix supplements the hostname rule and does not replace it.",
+      "Not emitted: AS63179 is named XAI and PeeringDB lists it as xAI with website https://x.ai/ (https://www.peeringdb.com/asn/63179), but ARIN organization TWITT (Twitter Inc.) holds the announced prefixes 69.12.56.0/21 (TWITTER-NETWORK), 192.48.236.0/23 (TWITTER-NETWORK), and 209.237.208.0/24. That last /24 is part of Twitter's allocation 209.237.192.0/19 (TWITT). Blocking those ranges would block X/Twitter address space."
+    ],
+    "prefixes": [
+      {"prefix": "31.207.0.0/24", "emit": true, "source": "https://whois.arin.net/rest/net/NET-31-207-0-0-1"}
+    ]
+  },
+  "openai_network": {
+    "description": "Address space registered to OpenAI OpCo, LLC (ARIN organization OOL-15) that was routed on the review date. This is not the crawler feed and it is not the Cloudflare addresses that currently answer api.openai.com.",
+    "org_handle": "OOL-15",
+    "org_name": "OpenAI OpCo, LLC",
+    "do_not_emit": ["2604:f20::/32"],
+    "notes": [
+      "Organization: OpenAI OpCo, LLC, ARIN handle OOL-15 (https://whois.arin.net/rest/org/OOL-15). AS401518 is named OAI-01. AS401864 is named OPENAI and originated no prefixes on the review date.",
+      "199.47.142.0/23 is ARIN net NET-199-47-142-0-1 (OOL-15) and the only prefix originated by AS401518 (https://ipinfo.io/AS401518/199.47.142.0/23, https://ipgeolocation.io/browse/asn/AS401518, https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS401518). api.openai.com still resolves to shared CDN addresses, so this prefix supplements the hostname rule and does not replace it.",
+      "Not emitted: 2604:f20::/32 is ARIN net STARGATE-01, registered to OOL-15 on 2025-05-06 (https://whois.arin.net/rest/net/NET6-2604-F20-1). It was not announced."
+    ],
+    "prefixes": [
+      {"prefix": "199.47.142.0/23", "emit": true, "source": "https://whois.arin.net/rest/net/NET-199-47-142-0-1"}
+    ]
+  },
+  "inbound": {
+    "description": "Crawler and user-agent controls for sites and APIs you publish.",
+    "feeds": [
+      {"id": "openai-gptbot", "operator": "OpenAI", "tokens": ["GPTBot"], "url": "https://openai.com/gptbot.json", "format": "google-json", "snapshot": "gptbot.json", "aggregate": true},
+      {"id": "openai-searchbot", "operator": "OpenAI", "tokens": ["OAI-SearchBot"], "url": "https://openai.com/searchbot.json", "format": "google-json", "snapshot": "searchbot.json", "aggregate": true},
+      {"id": "openai-adsbot", "operator": "OpenAI", "tokens": ["OAI-AdsBot"], "url": "https://openai.com/adsbot.json", "format": "google-json", "snapshot": "adsbot.json", "aggregate": true},
+      {"id": "openai-chatgpt-user", "operator": "OpenAI", "tokens": ["ChatGPT-User"], "url": "https://openai.com/chatgpt-user.json", "format": "google-json", "snapshot": "chatgpt-user.json", "aggregate": true},
+      {"id": "anthropic", "operator": "Anthropic", "tokens": ["ClaudeBot", "Claude-SearchBot", "Claude-User"], "url": "https://claude.com/crawling/bots.json", "format": "google-json", "snapshot": "anthropic-bots.json", "aggregate": true},
+      {"id": "perplexitybot", "operator": "Perplexity", "tokens": ["PerplexityBot"], "url": "https://www.perplexity.ai/perplexitybot.json", "format": "google-json", "snapshot": "perplexitybot.json", "aggregate": true},
+      {"id": "perplexity-user", "operator": "Perplexity", "tokens": ["Perplexity-User"], "url": "https://www.perplexity.ai/perplexity-user.json", "format": "google-json", "snapshot": "perplexity-user.json", "aggregate": true},
+      {"id": "amazonbot", "operator": "Amazon", "tokens": ["Amazonbot"], "url": "https://developer.amazon.com/amazonbot/ip-addresses/", "format": "amazon-html", "snapshot": "amazonbot.txt", "aggregate": true},
+      {"id": "amzn-searchbot", "operator": "Amazon", "tokens": ["Amzn-SearchBot"], "url": "https://developer.amazon.com/amazonbot/searchbot-ip-addresses/", "format": "amazon-html", "snapshot": "amzn-searchbot.txt", "aggregate": true},
+      {"id": "amzn-user", "operator": "Amazon", "tokens": ["Amzn-User"], "url": "https://developer.amazon.com/amazonbot/live-ip-addresses/", "format": "amazon-html", "snapshot": "amzn-user.txt", "aggregate": true},
+      {"id": "applebot", "operator": "Apple", "tokens": ["Applebot"], "url": "https://search.developer.apple.com/applebot.json", "format": "google-json", "snapshot": "applebot.json", "aggregate": false, "note": "Verification only. Applebot also indexes for Apple search; the training opt-out is the Applebot-Extended robots.txt token."},
+      {"id": "googlebot", "operator": "Google", "tokens": ["Googlebot"], "url": "https://developers.google.com/static/search/apis/ipranges/googlebot.json", "format": "google-json", "snapshot": "googlebot.json", "aggregate": false, "note": "Verification only. Blocking Googlebot removes the site from Google Search; Google-Extended is a robots.txt token with no separate address range."},
+      {"id": "google-special-crawlers", "operator": "Google", "tokens": ["GoogleOther", "Google-CloudVertexBot"], "url": "https://developers.google.com/static/search/apis/ipranges/special-crawlers.json", "format": "google-json", "snapshot": "google-special-crawlers.json", "aggregate": false, "note": "Verification only."},
+      {"id": "google-user-triggered-fetchers", "operator": "Google", "tokens": ["Google-Agent"], "url": "https://developers.google.com/static/search/apis/ipranges/user-triggered-fetchers.json", "format": "google-json", "snapshot": "google-user-triggered-fetchers.json", "aggregate": false, "note": "Verification only."},
+      {"id": "google-user-triggered-fetchers-google", "operator": "Google", "tokens": ["Google-Agent"], "url": "https://developers.google.com/static/search/apis/ipranges/user-triggered-fetchers-google.json", "format": "google-json", "snapshot": "google-user-triggered-fetchers-google.json", "aggregate": false, "note": "Verification only."}
+    ],
+    "user_agents": [
+      {"token": "GPTBot", "operator": "OpenAI", "purpose": "training", "kind": "documented", "header": true, "feed": "openai-gptbot", "source": "https://developers.openai.com/api/docs/bots"},
+      {"token": "OAI-SearchBot", "operator": "OpenAI", "purpose": "search", "kind": "documented", "header": true, "feed": "openai-searchbot", "source": "https://developers.openai.com/api/docs/bots"},
+      {"token": "OAI-AdsBot", "operator": "OpenAI", "purpose": "ads", "kind": "documented", "header": true, "feed": "openai-adsbot", "source": "https://developers.openai.com/api/docs/bots"},
+      {"token": "ChatGPT-User", "operator": "OpenAI", "purpose": "user", "kind": "documented", "header": true, "feed": "openai-chatgpt-user", "source": "https://developers.openai.com/api/docs/bots"},
+      {"token": "ClaudeBot", "operator": "Anthropic", "purpose": "training", "kind": "documented", "header": true, "feed": "anthropic", "source": "https://privacy.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"},
+      {"token": "Claude-SearchBot", "operator": "Anthropic", "purpose": "search", "kind": "documented", "header": true, "feed": "anthropic", "source": "https://privacy.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"},
+      {"token": "Claude-User", "operator": "Anthropic", "purpose": "user", "kind": "documented", "header": true, "feed": "anthropic", "source": "https://privacy.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"},
+      {"token": "PerplexityBot", "operator": "Perplexity", "purpose": "search", "kind": "documented", "header": true, "feed": "perplexitybot", "source": "https://docs.perplexity.ai/docs/resources/perplexity-crawlers"},
+      {"token": "Perplexity-User", "operator": "Perplexity", "purpose": "user", "kind": "documented", "header": true, "feed": "perplexity-user", "source": "https://docs.perplexity.ai/docs/resources/perplexity-crawlers"},
+      {"token": "Amazonbot", "operator": "Amazon", "purpose": "training", "kind": "documented", "header": true, "feed": "amazonbot", "source": "https://developer.amazon.com/amazonbot"},
+      {"token": "Amzn-SearchBot", "operator": "Amazon", "purpose": "search", "kind": "documented", "header": true, "feed": "amzn-searchbot", "source": "https://developer.amazon.com/amazonbot"},
+      {"token": "Amzn-User", "operator": "Amazon", "purpose": "user", "kind": "documented", "header": true, "feed": "amzn-user", "source": "https://developer.amazon.com/amazonbot"},
+      {"token": "Google-Extended", "operator": "Google", "purpose": "training", "kind": "documented", "header": false, "feed": null, "source": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers"},
+      {"token": "Applebot-Extended", "operator": "Apple", "purpose": "training", "kind": "documented", "header": false, "feed": null, "source": "https://support.apple.com/en-us/119829"},
+      {"token": "CCBot", "operator": "Common Crawl", "purpose": "training", "kind": "common", "header": true, "feed": null, "source": "https://github.com/ai-robots-txt/ai.robots.txt"},
+      {"token": "Bytespider", "operator": "ByteDance", "purpose": "training", "kind": "common", "header": true, "feed": null, "source": "https://github.com/ai-robots-txt/ai.robots.txt"},
+      {"token": "Meta-ExternalAgent", "operator": "Meta", "purpose": "training", "kind": "common", "header": true, "feed": null, "source": "https://github.com/ai-robots-txt/ai.robots.txt"},
+      {"token": "Meta-ExternalFetcher", "operator": "Meta", "purpose": "user", "kind": "common", "header": true, "feed": null, "source": "https://github.com/ai-robots-txt/ai.robots.txt"},
+      {"token": "cohere-ai", "operator": "Cohere", "purpose": "user", "kind": "common", "header": true, "feed": null, "source": "https://github.com/ai-robots-txt/ai.robots.txt"},
+      {"token": "MistralAI-User", "operator": "Mistral AI", "purpose": "user", "kind": "common", "header": true, "feed": null, "source": "https://github.com/ai-robots-txt/ai.robots.txt"},
+      {"token": "Diffbot", "operator": "Diffbot", "purpose": "training", "kind": "common", "header": true, "feed": null, "source": "https://github.com/ai-robots-txt/ai.robots.txt"},
+      {"token": "ApifyWebsiteContentCrawler", "operator": "Apify", "purpose": "user", "kind": "documented", "header": true, "header_patterns": ["ApifyWebsiteContentCrawler/", "+https://apify.com/apify/website-content-crawler"], "feed": null, "source": "https://radar.cloudflare.com/bots/directory/apify-website-content-crawler"},
+      {"token": "ChathiveCrawler", "operator": "Inteso Group BV", "purpose": "user", "kind": "documented", "header": true, "header_patterns": ["ChathiveCrawler/"], "feed": null, "source": "https://radar.cloudflare.com/bots/directory/chathive-crawler"},
+      {"token": "CledaraBot", "operator": "Cledara", "purpose": "user", "kind": "documented", "header": true, "header_patterns": ["CledaraBot/"], "feed": null, "source": "https://radar.cloudflare.com/bots/directory/cledara-saas-management-agent"},
+      {"token": "Devin", "operator": "Devin AI", "purpose": "user", "kind": "documented", "header": true, "header_patterns": ["Devin/", "+https://devin.ai"], "feed": null, "source": "https://radar.cloudflare.com/bots/directory/devin"},
+      {"token": "DuckAssistBot", "operator": "DuckDuckGo", "purpose": "user", "kind": "documented", "header": true, "header_patterns": ["DuckAssistBot/", "+http://duckduckgo.com/duckassistbot.html"], "feed": null, "source": "https://radar.cloudflare.com/bots/directory/duckassistbot"},
+      {"token": "EasyScan", "operator": "codire GmbH", "purpose": "user", "kind": "documented", "header": true, "header_patterns": ["EasyScan/"], "feed": null, "source": "https://radar.cloudflare.com/bots/directory/easyscan"},
+      {"token": "Google-Agent", "operator": "Google", "purpose": "user", "kind": "documented", "header": true, "header_patterns": ["Google-Agent", "https://developers.google.com/crawling/docs/crawlers-fetchers/google-agent"], "feed": null, "source": "https://radar.cloudflare.com/bots/directory/google-agent"},
+      {"token": "GrokAgent", "operator": "xAI", "purpose": "user", "kind": "documented", "header": true, "feed": null, "source": "https://radar.cloudflare.com/bots/directory/grok-bot"},
+      {"token": "HarkBot", "operator": "Hark", "purpose": "user", "kind": "documented", "header": true, "header_patterns": ["HarkBot/"], "feed": null, "source": "https://radar.cloudflare.com/bots/directory/harkbot"},
+      {"token": "HIFIBot", "operator": "HIFI", "purpose": "user", "kind": "documented", "header": true, "header_patterns": ["HIFIBot/", "+https://hi.fi"], "feed": null, "source": "https://radar.cloudflare.com/bots/directory/hifibot"},
+      {"token": "Instapaper", "operator": "Instant Paper", "purpose": "user", "kind": "documented", "header": true, "header_patterns": ["Instapaper/", "Instaparser/"], "feed": null, "source": "https://radar.cloudflare.com/bots/directory/instapaper"},
+      {"token": "meta-externaltest", "operator": "Meta", "purpose": "user", "kind": "documented", "header": true, "header_patterns": ["meta-externaltest/"], "feed": null, "source": "https://radar.cloudflare.com/bots/directory/meta-externaltest"},
+      {"token": "Nava/", "operator": "Nava Labs", "purpose": "user", "kind": "documented", "header": true, "feed": null, "source": "https://radar.cloudflare.com/bots/directory/nava-labs-asp-dev"},
+      {"token": "QATechBot", "operator": "QA.tech", "purpose": "user", "kind": "documented", "header": true, "header_patterns": ["QATechBot/"], "feed": null, "source": "https://radar.cloudflare.com/bots/directory/qatechbot"},
+      {"token": "Retool/", "operator": "Retool", "purpose": "user", "kind": "documented", "header": true, "header_patterns": ["Retool/", "+https://docs.tryretool.com/docs/apis"], "feed": null, "source": "https://radar.cloudflare.com/bots/directory/retool"},
+      {"token": "TwinAgent", "operator": "Twin", "purpose": "user", "kind": "documented", "header": true, "header_patterns": ["TwinAgent/"], "feed": null, "source": "https://radar.cloudflare.com/bots/directory/twinagent"},
+      {"token": "ZipchatBot", "operator": "Zipchat Inc", "purpose": "user", "kind": "documented", "header": true, "header_patterns": ["ZipchatBot/", "+https://zipchat.ai/bot"], "feed": null, "source": "https://radar.cloudflare.com/bots/directory/zipchatbot"}
+    ],
+    "community_robots_tokens": {
+      "source": "https://github.com/ai-robots-txt/ai.robots.txt/blob/main/robots.txt",
+      "retrieved": "2026-09-27",
+      "tokens": [
+        "AddSearchBot", "AgentDataBot", "AgentTimes", "AI2Bot", "AI2Bot-DeepResearchEval", "Ai2Bot-Dolma", "aiHitBot",
+        "AIWebIndex", "amazon-kendra", "amazon-QBusiness", "Amazonbot", "AmazonBuyForMe", "Amzn-SearchBot", "Amzn-User",
+        "Andibot", "Anomura", "anthropic-ai", "ApifyBot", "ApifyWebsiteContentCrawler", "Applebot", "Applebot-Extended",
+        "Aranet-SearchBot", "atlassian-bot", "Awario", "AzureAI-SearchBot", "bedrockbot", "bigsur.ai", "BixelBot",
+        "Bravebot", "Brightbot", "Brightbot 1.0", "BuddyBot", "Bytespider", "CCBot", "Channel3Bot", "ChatGLM-Spider",
+        "ChatGPT Agent", "ChatGPT-User", "Claude-Code", "Claude-SearchBot", "Claude-User", "Claude-Web", "ClaudeBot",
+        "Cloudflare-AutoRAG", "CloudflareBrowserRenderingCrawler", "CloudVertexBot", "Code", "cohere-ai",
+        "cohere-training-data-crawler", "Cotoyogi", "CragCrawler", "Crawl4AI", "Crawlspace", "Cursor",
+        "Datenbank Crawler", "DeepSeekBot", "Devin", "Diffbot", "Diffbot-User", "DoubaoBot", "DuckAssistBot",
+        "Echobot Bot", "EchoboxBot", "ERNIEBot", "ExaBot", "ExaSearchBot", "FacebookBot", "facebookexternalhit",
+        "Factset_spyderbot", "FirecrawlAgent", "FriendlyCrawler", "GeistHaus-PageFetcher", "Gemini-Deep-Research",
+        "Google-Agent", "Google-CloudVertexBot", "Google-Extended", "Google-Firebase", "Google-Gemini-CLI",
+        "Google-NotebookLM", "GoogleAgent-Mariner", "GoogleAgent-URLContext", "GoogleOther", "GoogleOther-Image",
+        "GoogleOther-Video", "GPTBot", "HenkBot", "iAskBot", "iaskspider", "iaskspider/2.0", "ICC-Crawler",
+        "ImagesiftBot", "imageSpider", "img2dataset", "ISSCyberRiskCrawler", "kagi-fetcher", "Kangaroo Bot",
+        "Kimi-Agent", "Kimi-SearchBot", "Kimi-User", "KimiBot", "KlaviyoAIBot", "KunatoCrawler",
+        "laion-huggingface-processor", "LAIONDownloader", "LCC", "Lightpanda", "LinerBot", "Linguee Bot", "LinkupBot",
+        "Manus-User", "meta-externalagent", "Meta-ExternalAgent", "meta-externalfetcher", "Meta-ExternalFetcher",
+        "meta-webindexer", "MistralAI-Index", "MistralAI-Training", "MistralAI-User", "MistralAI-User/1.0",
+        "Mozilla-Tabstack", "MyCentralAIScraperBot", "NagetBot", "netEstate Imprint Crawler", "newsai", "NotebookLM",
+        "NovaAct", "OAI-AdsBot", "OAI-SearchBot", "omgili", "omgilibot", "OpenAI", "opencode", "Operator", "PanguBot",
+        "Panscient", "panscient.com", "Perplexity-User", "PerplexityBot", "PetalBot", "PhindBot", "Poggio-Citations",
+        "Poseidon Research Crawler", "qodercli", "QualifiedBot", "Querit-SearchBot", "QueritBot", "QuillBot",
+        "quillbot.com", "QwenBot", "Reflectionbot", "SBIntuitionsBot", "Scrapy", "SemrushBot-OCOB", "SemrushBot-SWA",
+        "Shap-User", "ShapBot", "Sidetrade indexer bot", "Spider", "TavilyBot", "Terra Cotta", "TerraCotta", "Thinkbot",
+        "TikTokSpider", "Timpibot", "TongyiBot", "Trae", "TwinAgent", "UseAI", "VelenPublicWebCrawler", "WARDBot",
+        "Webzio-Extended", "webzio-extended", "wpbot", "WRTNBot", "YaK", "YandexAdditional", "YandexAdditionalBot",
+        "YiyanBot", "YouBot", "ZanistaBot"
+      ]
+    }
+  },
+  "suricata": {
+    "sid_base": {
+      "tls_sni": 9100000,
+      "dns_query": 9200000,
+      "http_host": 9300000,
+      "http_user_agent": 9400000
+    },
+    "rev": 1
+  }
+}

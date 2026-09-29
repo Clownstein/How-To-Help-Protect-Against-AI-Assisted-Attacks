@@ -1,0 +1,2182 @@
+{
+  "creator": "Albert Clownstein",
+  "reviewed": "2026-09-28",
+  "crawlers": [
+    {
+      "token": "GPTBot",
+      "operator": "OpenAI",
+      "purpose": "training",
+      "header": true,
+      "header_patterns": [],
+      "profile": "recommended"
+    },
+    {
+      "token": "OAI-SearchBot",
+      "operator": "OpenAI",
+      "purpose": "search",
+      "header": true,
+      "header_patterns": [],
+      "profile": "recommended"
+    },
+    {
+      "token": "OAI-AdsBot",
+      "operator": "OpenAI",
+      "purpose": "ads",
+      "header": true,
+      "header_patterns": [],
+      "profile": "recommended"
+    },
+    {
+      "token": "ChatGPT-User",
+      "operator": "OpenAI",
+      "purpose": "user",
+      "header": true,
+      "header_patterns": [],
+      "profile": "recommended"
+    },
+    {
+      "token": "ClaudeBot",
+      "operator": "Anthropic",
+      "purpose": "training",
+      "header": true,
+      "header_patterns": [],
+      "profile": "recommended"
+    },
+    {
+      "token": "Claude-SearchBot",
+      "operator": "Anthropic",
+      "purpose": "search",
+      "header": true,
+      "header_patterns": [],
+      "profile": "recommended"
+    },
+    {
+      "token": "Claude-User",
+      "operator": "Anthropic",
+      "purpose": "user",
+      "header": true,
+      "header_patterns": [],
+      "profile": "recommended"
+    },
+    {
+      "token": "PerplexityBot",
+      "operator": "Perplexity",
+      "purpose": "search",
+      "header": true,
+      "header_patterns": [],
+      "profile": "recommended"
+    },
+    {
+      "token": "Perplexity-User",
+      "operator": "Perplexity",
+      "purpose": "user",
+      "header": true,
+      "header_patterns": [],
+      "profile": "recommended"
+    },
+    {
+      "token": "Amazonbot",
+      "operator": "Amazon",
+      "purpose": "training",
+      "header": true,
+      "header_patterns": [],
+      "profile": "recommended"
+    },
+    {
+      "token": "Amzn-SearchBot",
+      "operator": "Amazon",
+      "purpose": "search",
+      "header": true,
+      "header_patterns": [],
+      "profile": "recommended"
+    },
+    {
+      "token": "Amzn-User",
+      "operator": "Amazon",
+      "purpose": "user",
+      "header": true,
+      "header_patterns": [],
+      "profile": "recommended"
+    },
+    {
+      "token": "Google-Extended",
+      "operator": "Google",
+      "purpose": "training",
+      "header": false,
+      "header_patterns": [],
+      "profile": "recommended"
+    },
+    {
+      "token": "Applebot-Extended",
+      "operator": "Apple",
+      "purpose": "training",
+      "header": false,
+      "header_patterns": [],
+      "profile": "recommended"
+    },
+    {
+      "token": "CCBot",
+      "operator": "Common Crawl",
+      "purpose": "training",
+      "header": true,
+      "header_patterns": [],
+      "profile": "recommended"
+    },
+    {
+      "token": "Bytespider",
+      "operator": "ByteDance",
+      "purpose": "training",
+      "header": true,
+      "header_patterns": [],
+      "profile": "recommended"
+    },
+    {
+      "token": "Meta-ExternalAgent",
+      "operator": "Meta",
+      "purpose": "training",
+      "header": true,
+      "header_patterns": [],
+      "profile": "recommended"
+    },
+    {
+      "token": "Meta-ExternalFetcher",
+      "operator": "Meta",
+      "purpose": "user",
+      "header": true,
+      "header_patterns": [],
+      "profile": "recommended"
+    },
+    {
+      "token": "cohere-ai",
+      "operator": "Cohere",
+      "purpose": "user",
+      "header": true,
+      "header_patterns": [],
+      "profile": "recommended"
+    },
+    {
+      "token": "MistralAI-User",
+      "operator": "Mistral AI",
+      "purpose": "user",
+      "header": true,
+      "header_patterns": [],
+      "profile": "recommended"
+    },
+    {
+      "token": "Diffbot",
+      "operator": "Diffbot",
+      "purpose": "training",
+      "header": true,
+      "header_patterns": [],
+      "profile": "recommended"
+    },
+    {
+      "token": "ApifyWebsiteContentCrawler",
+      "operator": "Apify",
+      "purpose": "user",
+      "header": true,
+      "header_patterns": [
+        "ApifyWebsiteContentCrawler/",
+        "+https://apify.com/apify/website-content-crawler"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "token": "ChathiveCrawler",
+      "operator": "Inteso Group BV",
+      "purpose": "user",
+      "header": true,
+      "header_patterns": [
+        "ChathiveCrawler/"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "token": "CledaraBot",
+      "operator": "Cledara",
+      "purpose": "user",
+      "header": true,
+      "header_patterns": [
+        "CledaraBot/"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "token": "Devin",
+      "operator": "Devin AI",
+      "purpose": "user",
+      "header": true,
+      "header_patterns": [
+        "Devin/",
+        "+https://devin.ai"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "token": "DuckAssistBot",
+      "operator": "DuckDuckGo",
+      "purpose": "user",
+      "header": true,
+      "header_patterns": [
+        "DuckAssistBot/",
+        "+http://duckduckgo.com/duckassistbot.html"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "token": "EasyScan",
+      "operator": "codire GmbH",
+      "purpose": "user",
+      "header": true,
+      "header_patterns": [
+        "EasyScan/"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "token": "Google-Agent",
+      "operator": "Google",
+      "purpose": "user",
+      "header": true,
+      "header_patterns": [
+        "Google-Agent",
+        "https://developers.google.com/crawling/docs/crawlers-fetchers/google-agent"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "token": "GrokAgent",
+      "operator": "xAI",
+      "purpose": "user",
+      "header": true,
+      "header_patterns": [],
+      "profile": "recommended"
+    },
+    {
+      "token": "HarkBot",
+      "operator": "Hark",
+      "purpose": "user",
+      "header": true,
+      "header_patterns": [
+        "HarkBot/"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "token": "HIFIBot",
+      "operator": "HIFI",
+      "purpose": "user",
+      "header": true,
+      "header_patterns": [
+        "HIFIBot/",
+        "+https://hi.fi"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "token": "Instapaper",
+      "operator": "Instant Paper",
+      "purpose": "user",
+      "header": true,
+      "header_patterns": [
+        "Instapaper/",
+        "Instaparser/"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "token": "meta-externaltest",
+      "operator": "Meta",
+      "purpose": "user",
+      "header": true,
+      "header_patterns": [
+        "meta-externaltest/"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "token": "Nava/",
+      "operator": "Nava Labs",
+      "purpose": "user",
+      "header": true,
+      "header_patterns": [],
+      "profile": "recommended"
+    },
+    {
+      "token": "QATechBot",
+      "operator": "QA.tech",
+      "purpose": "user",
+      "header": true,
+      "header_patterns": [
+        "QATechBot/"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "token": "Retool/",
+      "operator": "Retool",
+      "purpose": "user",
+      "header": true,
+      "header_patterns": [
+        "Retool/",
+        "+https://docs.tryretool.com/docs/apis"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "token": "TwinAgent",
+      "operator": "Twin",
+      "purpose": "user",
+      "header": true,
+      "header_patterns": [
+        "TwinAgent/"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "token": "ZipchatBot",
+      "operator": "Zipchat Inc",
+      "purpose": "user",
+      "header": true,
+      "header_patterns": [
+        "ZipchatBot/",
+        "+https://zipchat.ai/bot"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "token": "AddSearchBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "AgentDataBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "AgentTimes",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "AI2Bot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "AI2Bot-DeepResearchEval",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Ai2Bot-Dolma",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "aiHitBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "AIWebIndex",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "amazon-kendra",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "amazon-QBusiness",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "AmazonBuyForMe",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Andibot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Anomura",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "anthropic-ai",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "ApifyBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Applebot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Aranet-SearchBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "atlassian-bot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Awario",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "AzureAI-SearchBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "bedrockbot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "bigsur.ai",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "BixelBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Bravebot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Brightbot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Brightbot 1.0",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "BuddyBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Channel3Bot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "ChatGLM-Spider",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "ChatGPT Agent",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Claude-Code",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Claude-Web",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Cloudflare-AutoRAG",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "CloudflareBrowserRenderingCrawler",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "CloudVertexBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Code",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "cohere-training-data-crawler",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Cotoyogi",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "CragCrawler",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Crawl4AI",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Crawlspace",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Cursor",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Datenbank Crawler",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "DeepSeekBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Diffbot-User",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "DoubaoBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Echobot Bot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "EchoboxBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "ERNIEBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "ExaBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "ExaSearchBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "FacebookBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "facebookexternalhit",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Factset_spyderbot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "FirecrawlAgent",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "FriendlyCrawler",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "GeistHaus-PageFetcher",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Gemini-Deep-Research",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Google-CloudVertexBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Google-Firebase",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Google-Gemini-CLI",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Google-NotebookLM",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "GoogleAgent-Mariner",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "GoogleAgent-URLContext",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "GoogleOther",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "GoogleOther-Image",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "GoogleOther-Video",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "HenkBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "iAskBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "iaskspider",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "iaskspider/2.0",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "ICC-Crawler",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "ImagesiftBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "imageSpider",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "img2dataset",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "ISSCyberRiskCrawler",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "kagi-fetcher",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Kangaroo Bot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Kimi-Agent",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Kimi-SearchBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Kimi-User",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "KimiBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "KlaviyoAIBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "KunatoCrawler",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "laion-huggingface-processor",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "LAIONDownloader",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "LCC",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Lightpanda",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "LinerBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Linguee Bot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "LinkupBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Manus-User",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "meta-webindexer",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "MistralAI-Index",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "MistralAI-Training",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "MistralAI-User/1.0",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Mozilla-Tabstack",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "MyCentralAIScraperBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "NagetBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "netEstate Imprint Crawler",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "newsai",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "NotebookLM",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "NovaAct",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "omgili",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "omgilibot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "OpenAI",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "opencode",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Operator",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "PanguBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Panscient",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "panscient.com",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "PetalBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "PhindBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Poggio-Citations",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Poseidon Research Crawler",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "qodercli",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "QualifiedBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Querit-SearchBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "QueritBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "QuillBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "quillbot.com",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "QwenBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Reflectionbot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "SBIntuitionsBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Scrapy",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "SemrushBot-OCOB",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "SemrushBot-SWA",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Shap-User",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "ShapBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Sidetrade indexer bot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Spider",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "TavilyBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Terra Cotta",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "TerraCotta",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Thinkbot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "TikTokSpider",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Timpibot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "TongyiBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Trae",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "UseAI",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "VelenPublicWebCrawler",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "WARDBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "Webzio-Extended",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "wpbot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "WRTNBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "YaK",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "YandexAdditional",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "YandexAdditionalBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "YiyanBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "YouBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    },
+    {
+      "token": "ZanistaBot",
+      "operator": "",
+      "purpose": "community",
+      "header": false,
+      "header_patterns": [],
+      "profile": "full"
+    }
+  ],
+  "inference": [
+    {
+      "id": "Anthropic:Claude API:host",
+      "provider": "Anthropic",
+      "service": "Claude API",
+      "match": "host",
+      "values": [
+        "api.anthropic.com"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "id": "OpenAI:OpenAI API:host",
+      "provider": "OpenAI",
+      "service": "OpenAI API",
+      "match": "host",
+      "values": [
+        "api.openai.com"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "id": "Google:Gemini API:host",
+      "provider": "Google",
+      "service": "Gemini API",
+      "match": "host",
+      "values": [
+        "generativelanguage.googleapis.com"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "id": "Microsoft:Azure OpenAI resource endpoints:subdomains",
+      "provider": "Microsoft",
+      "service": "Azure OpenAI resource endpoints",
+      "match": "subdomains",
+      "values": [
+        "openai.azure.com"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "id": "Cohere:Cohere API:host",
+      "provider": "Cohere",
+      "service": "Cohere API",
+      "match": "host",
+      "values": [
+        "api.cohere.com"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "id": "Mistral AI:Mistral API:host",
+      "provider": "Mistral AI",
+      "service": "Mistral API",
+      "match": "host",
+      "values": [
+        "api.mistral.ai"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "id": "Together AI:Together inference API:host",
+      "provider": "Together AI",
+      "service": "Together inference API",
+      "match": "host",
+      "values": [
+        "api.together.xyz"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "id": "Groq:GroqCloud API:host",
+      "provider": "Groq",
+      "service": "GroqCloud API",
+      "match": "host",
+      "values": [
+        "api.groq.com"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "id": "Fireworks AI:Fireworks inference API:host",
+      "provider": "Fireworks AI",
+      "service": "Fireworks inference API",
+      "match": "host",
+      "values": [
+        "api.fireworks.ai"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "id": "Amazon Web Services:Amazon Bedrock Runtime:host",
+      "provider": "Amazon Web Services",
+      "service": "Amazon Bedrock Runtime",
+      "match": "host",
+      "values": [
+        "bedrock-runtime.ap-northeast-1.amazonaws.com",
+        "bedrock-runtime.ap-northeast-2.amazonaws.com",
+        "bedrock-runtime.ap-northeast-3.amazonaws.com",
+        "bedrock-runtime.ap-south-1.amazonaws.com",
+        "bedrock-runtime.ap-south-2.amazonaws.com",
+        "bedrock-runtime.ap-southeast-1.amazonaws.com",
+        "bedrock-runtime.ap-southeast-2.amazonaws.com",
+        "bedrock-runtime.ca-central-1.amazonaws.com",
+        "bedrock-runtime.eu-central-1.amazonaws.com",
+        "bedrock-runtime.eu-central-2.amazonaws.com",
+        "bedrock-runtime.eu-north-1.amazonaws.com",
+        "bedrock-runtime.eu-south-1.amazonaws.com",
+        "bedrock-runtime.eu-south-2.amazonaws.com",
+        "bedrock-runtime.eu-west-1.amazonaws.com",
+        "bedrock-runtime.eu-west-2.amazonaws.com",
+        "bedrock-runtime.eu-west-3.amazonaws.com",
+        "bedrock-runtime.sa-east-1.amazonaws.com",
+        "bedrock-runtime.us-east-1.amazonaws.com",
+        "bedrock-runtime.us-east-2.amazonaws.com",
+        "bedrock-runtime.us-gov-east-1.amazonaws.com",
+        "bedrock-runtime.us-gov-west-1.amazonaws.com",
+        "bedrock-runtime.us-west-2.amazonaws.com",
+        "bedrock-runtime-fips.ca-central-1.amazonaws.com",
+        "bedrock-runtime-fips.us-east-1.amazonaws.com",
+        "bedrock-runtime-fips.us-east-2.amazonaws.com",
+        "bedrock-runtime-fips.us-gov-east-1.amazonaws.com",
+        "bedrock-runtime-fips.us-gov-west-1.amazonaws.com",
+        "bedrock-runtime-fips.us-west-2.amazonaws.com"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "id": "Amazon Web Services:Agents for Amazon Bedrock Runtime:host",
+      "provider": "Amazon Web Services",
+      "service": "Agents for Amazon Bedrock Runtime",
+      "match": "host",
+      "values": [
+        "bedrock-agent-runtime.ap-northeast-1.amazonaws.com",
+        "bedrock-agent-runtime.ap-northeast-2.amazonaws.com",
+        "bedrock-agent-runtime.ap-south-1.amazonaws.com",
+        "bedrock-agent-runtime.ap-southeast-1.amazonaws.com",
+        "bedrock-agent-runtime.ap-southeast-2.amazonaws.com",
+        "bedrock-agent-runtime.ca-central-1.amazonaws.com",
+        "bedrock-agent-runtime.eu-central-1.amazonaws.com",
+        "bedrock-agent-runtime.eu-west-1.amazonaws.com",
+        "bedrock-agent-runtime.eu-west-2.amazonaws.com",
+        "bedrock-agent-runtime.eu-west-3.amazonaws.com",
+        "bedrock-agent-runtime.sa-east-1.amazonaws.com",
+        "bedrock-agent-runtime.us-east-1.amazonaws.com",
+        "bedrock-agent-runtime.us-west-2.amazonaws.com",
+        "bedrock-agent-runtime-fips.us-east-1.amazonaws.com",
+        "bedrock-agent-runtime-fips.us-west-2.amazonaws.com"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "id": "Amazon Web Services:Amazon Bedrock Mantle (OpenAI-compatible endpoints):host",
+      "provider": "Amazon Web Services",
+      "service": "Amazon Bedrock Mantle (OpenAI-compatible endpoints)",
+      "match": "host",
+      "values": [
+        "bedrock-mantle.ap-northeast-1.api.aws",
+        "bedrock-mantle.ap-south-1.api.aws",
+        "bedrock-mantle.ap-southeast-2.api.aws",
+        "bedrock-mantle.ap-southeast-3.api.aws",
+        "bedrock-mantle.eu-central-1.api.aws",
+        "bedrock-mantle.eu-north-1.api.aws",
+        "bedrock-mantle.eu-south-1.api.aws",
+        "bedrock-mantle.eu-west-1.api.aws",
+        "bedrock-mantle.eu-west-2.api.aws",
+        "bedrock-mantle.sa-east-1.api.aws",
+        "bedrock-mantle.us-east-1.api.aws",
+        "bedrock-mantle.us-east-2.api.aws",
+        "bedrock-mantle.us-gov-west-1.api.aws",
+        "bedrock-mantle.us-west-2.api.aws"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "id": "Perplexity:Sonar API:host",
+      "provider": "Perplexity",
+      "service": "Sonar API",
+      "match": "host",
+      "values": [
+        "api.perplexity.ai"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "id": "DeepSeek:DeepSeek API:host",
+      "provider": "DeepSeek",
+      "service": "DeepSeek API",
+      "match": "host",
+      "values": [
+        "api.deepseek.com"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "id": "xAI:Grok API:host",
+      "provider": "xAI",
+      "service": "Grok API",
+      "match": "host",
+      "values": [
+        "api.x.ai"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "id": "Moonshot AI:Kimi API (international):host",
+      "provider": "Moonshot AI",
+      "service": "Kimi API (international)",
+      "match": "host",
+      "values": [
+        "api.moonshot.ai"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "id": "Moonshot AI:Kimi API (mainland China):host",
+      "provider": "Moonshot AI",
+      "service": "Kimi API (mainland China)",
+      "match": "host",
+      "values": [
+        "api.moonshot.cn"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "id": "Meta:Llama API:host",
+      "provider": "Meta",
+      "service": "Llama API",
+      "match": "host",
+      "values": [
+        "api.meta.ai"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "id": "Cerebras:Cerebras inference API:host",
+      "provider": "Cerebras",
+      "service": "Cerebras inference API",
+      "match": "host",
+      "values": [
+        "api.cerebras.ai"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "id": "SambaNova:SambaNova Cloud API:host",
+      "provider": "SambaNova",
+      "service": "SambaNova Cloud API",
+      "match": "host",
+      "values": [
+        "api.sambanova.ai"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "id": "OpenRouter:OpenRouter aggregation API:host",
+      "provider": "OpenRouter",
+      "service": "OpenRouter aggregation API",
+      "match": "host",
+      "values": [
+        "openrouter.ai"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "id": "Hugging Face:Inference Providers router:host",
+      "provider": "Hugging Face",
+      "service": "Inference Providers router",
+      "match": "host",
+      "values": [
+        "router.huggingface.co"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "id": "Together AI:Together inference API (alternate host):host",
+      "provider": "Together AI",
+      "service": "Together inference API (alternate host)",
+      "match": "host",
+      "values": [
+        "api.together.ai"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "id": "Microsoft:Azure AI Services resource endpoints:subdomains",
+      "provider": "Microsoft",
+      "service": "Azure AI Services resource endpoints",
+      "match": "subdomains",
+      "values": [
+        "cognitiveservices.azure.com"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "id": "Microsoft:Microsoft Foundry resource endpoints:subdomains",
+      "provider": "Microsoft",
+      "service": "Microsoft Foundry resource endpoints",
+      "match": "subdomains",
+      "values": [
+        "services.ai.azure.com"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "id": "Google:Vertex AI / Gemini Enterprise Agent Platform global endpoint:host",
+      "provider": "Google",
+      "service": "Vertex AI / Gemini Enterprise Agent Platform global endpoint",
+      "match": "host",
+      "values": [
+        "aiplatform.googleapis.com"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "id": "Google:Vertex AI regional endpoint (United States multi-region):host",
+      "provider": "Google",
+      "service": "Vertex AI regional endpoint (United States multi-region)",
+      "match": "host",
+      "values": [
+        "aiplatform.us.rep.googleapis.com"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "id": "Google:Vertex AI regional endpoint (European Union multi-region):host",
+      "provider": "Google",
+      "service": "Vertex AI regional endpoint (European Union multi-region)",
+      "match": "host",
+      "values": [
+        "aiplatform.eu.rep.googleapis.com"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "id": "Google:Vertex AI regional endpoints (REGION-aiplatform.googleapis.com):label_suffix",
+      "provider": "Google",
+      "service": "Vertex AI regional endpoints (REGION-aiplatform.googleapis.com)",
+      "match": "label_suffix",
+      "values": [
+        "-aiplatform.googleapis.com"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "id": "Cloudflare:Workers AI REST API:url_path",
+      "provider": "Cloudflare",
+      "service": "Workers AI REST API",
+      "match": "url_path",
+      "values": [
+        "api.cloudflare.com/client/v4/accounts/*/ai/run"
+      ],
+      "profile": "recommended"
+    },
+    {
+      "id": "Replicate:Replicate API:host",
+      "provider": "Replicate",
+      "service": "Replicate API",
+      "match": "host",
+      "values": [
+        "api.replicate.com"
+      ],
+      "profile": "full"
+    },
+    {
+      "id": "AI21 Labs:AI21 Studio API:host",
+      "provider": "AI21 Labs",
+      "service": "AI21 Studio API",
+      "match": "host",
+      "values": [
+        "api.ai21.com"
+      ],
+      "profile": "full"
+    },
+    {
+      "id": "Novita AI:Novita inference API:host",
+      "provider": "Novita AI",
+      "service": "Novita inference API",
+      "match": "host",
+      "values": [
+        "api.novita.ai"
+      ],
+      "profile": "full"
+    },
+    {
+      "id": "DeepInfra:DeepInfra inference API:host",
+      "provider": "DeepInfra",
+      "service": "DeepInfra inference API",
+      "match": "host",
+      "values": [
+        "api.deepinfra.com"
+      ],
+      "profile": "full"
+    },
+    {
+      "id": "Featherless AI:Featherless inference API:host",
+      "provider": "Featherless AI",
+      "service": "Featherless inference API",
+      "match": "host",
+      "values": [
+        "api.featherless.ai"
+      ],
+      "profile": "full"
+    },
+    {
+      "id": "Hyperbolic:Hyperbolic inference API:host",
+      "provider": "Hyperbolic",
+      "service": "Hyperbolic inference API",
+      "match": "host",
+      "values": [
+        "api.hyperbolic.xyz"
+      ],
+      "profile": "full"
+    },
+    {
+      "id": "Baseten:Baseten model APIs:host",
+      "provider": "Baseten",
+      "service": "Baseten model APIs",
+      "match": "host",
+      "values": [
+        "inference.baseten.co"
+      ],
+      "profile": "full"
+    },
+    {
+      "id": "Voyage AI:Voyage embeddings API:host",
+      "provider": "Voyage AI",
+      "service": "Voyage embeddings API",
+      "match": "host",
+      "values": [
+        "api.voyageai.com"
+      ],
+      "profile": "full"
+    },
+    {
+      "id": "Jina AI:Jina API:host",
+      "provider": "Jina AI",
+      "service": "Jina API",
+      "match": "host",
+      "values": [
+        "api.jina.ai"
+      ],
+      "profile": "full"
+    },
+    {
+      "id": "fal:fal queue API:host",
+      "provider": "fal",
+      "service": "fal queue API",
+      "match": "host",
+      "values": [
+        "queue.fal.run"
+      ],
+      "profile": "full"
+    },
+    {
+      "id": "Stability AI:Stability API:host",
+      "provider": "Stability AI",
+      "service": "Stability API",
+      "match": "host",
+      "values": [
+        "api.stability.ai"
+      ],
+      "profile": "full"
+    },
+    {
+      "id": "Writer:Writer API:host",
+      "provider": "Writer",
+      "service": "Writer API",
+      "match": "host",
+      "values": [
+        "api.writer.com"
+      ],
+      "profile": "full"
+    },
+    {
+      "id": "Upstage:Upstage Solar API:host",
+      "provider": "Upstage",
+      "service": "Upstage Solar API",
+      "match": "host",
+      "values": [
+        "api.upstage.ai"
+      ],
+      "profile": "full"
+    },
+    {
+      "id": "Alibaba Cloud:DashScope / Qwen API (mainland China):host",
+      "provider": "Alibaba Cloud",
+      "service": "DashScope / Qwen API (mainland China)",
+      "match": "host",
+      "values": [
+        "dashscope.aliyuncs.com"
+      ],
+      "profile": "full"
+    },
+    {
+      "id": "Alibaba Cloud:DashScope / Qwen API (international):host",
+      "provider": "Alibaba Cloud",
+      "service": "DashScope / Qwen API (international)",
+      "match": "host",
+      "values": [
+        "dashscope-intl.aliyuncs.com"
+      ],
+      "profile": "full"
+    },
+    {
+      "id": "Zhipu AI / Z.ai:GLM API:host",
+      "provider": "Zhipu AI / Z.ai",
+      "service": "GLM API",
+      "match": "host",
+      "values": [
+        "open.bigmodel.cn"
+      ],
+      "profile": "full"
+    },
+    {
+      "id": "MiniMax:MiniMax API (international):host",
+      "provider": "MiniMax",
+      "service": "MiniMax API (international)",
+      "match": "host",
+      "values": [
+        "api.minimax.io"
+      ],
+      "profile": "full"
+    },
+    {
+      "id": "MiniMax:MiniMax API (mainland China):host",
+      "provider": "MiniMax",
+      "service": "MiniMax API (mainland China)",
+      "match": "host",
+      "values": [
+        "api.minimaxi.com"
+      ],
+      "profile": "full"
+    },
+    {
+      "id": "SiliconFlow:SiliconFlow API (international):host",
+      "provider": "SiliconFlow",
+      "service": "SiliconFlow API (international)",
+      "match": "host",
+      "values": [
+        "api.siliconflow.com"
+      ],
+      "profile": "full"
+    },
+    {
+      "id": "SiliconFlow:SiliconFlow API (mainland China):host",
+      "provider": "SiliconFlow",
+      "service": "SiliconFlow API (mainland China)",
+      "match": "host",
+      "values": [
+        "api.siliconflow.cn"
+      ],
+      "profile": "full"
+    },
+    {
+      "id": "FriendliAI:Friendli serverless endpoints:host",
+      "provider": "FriendliAI",
+      "service": "Friendli serverless endpoints",
+      "match": "host",
+      "values": [
+        "api.friendli.ai"
+      ],
+      "profile": "full"
+    },
+    {
+      "id": "Chutes:Chutes LLM API:host",
+      "provider": "Chutes",
+      "service": "Chutes LLM API",
+      "match": "host",
+      "values": [
+        "llm.chutes.ai"
+      ],
+      "profile": "full"
+    },
+    {
+      "id": "Black Forest Labs:FLUX API:host",
+      "provider": "Black Forest Labs",
+      "service": "FLUX API",
+      "match": "host",
+      "values": [
+        "api.bfl.ai"
+      ],
+      "profile": "full"
+    },
+    {
+      "id": "NVIDIA:NVIDIA API Catalog (NIM):host",
+      "provider": "NVIDIA",
+      "service": "NVIDIA API Catalog (NIM)",
+      "match": "host",
+      "values": [
+        "integrate.api.nvidia.com"
+      ],
+      "profile": "full"
+    },
+    {
+      "id": "Nscale:Nscale serverless inference:host",
+      "provider": "Nscale",
+      "service": "Nscale serverless inference",
+      "match": "host",
+      "values": [
+        "inference.api.nscale.com"
+      ],
+      "profile": "full"
+    },
+    {
+      "id": "Runpod:Runpod serverless and public endpoints:subdomains",
+      "provider": "Runpod",
+      "service": "Runpod serverless and public endpoints",
+      "match": "subdomains",
+      "values": [
+        "runpod.ai"
+      ],
+      "profile": "full"
+    },
+    {
+      "id": "Modal:Modal web endpoints:subdomains",
+      "provider": "Modal",
+      "service": "Modal web endpoints",
+      "match": "subdomains",
+      "values": [
+        "modal.run"
+      ],
+      "profile": "full"
+    }
+  ]
+}

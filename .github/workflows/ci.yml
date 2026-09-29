@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Install PHP and Perl
+        run: sudo apt-get update && sudo apt-get install -y php-cli perl
+
+      - name: Check generated files
+        run: python tools/generate.py --check
+
+      - name: Run tests
+        run: python -m unittest discover -s tests -v

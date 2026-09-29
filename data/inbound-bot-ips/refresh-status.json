@@ -1,0 +1,137 @@
+{
+  "amazonbot": {
+    "url": "https://developer.amazon.com/amazonbot/ip-addresses/",
+    "snapshot": "amazonbot.txt",
+    "last_attempt": "2026-09-28T18:52:17Z",
+    "status": "ok",
+    "prefixes": 1292,
+    "last_success": "2026-09-28T18:52:17Z",
+    "error": null
+  },
+  "amzn-searchbot": {
+    "url": "https://developer.amazon.com/amazonbot/searchbot-ip-addresses/",
+    "snapshot": "amzn-searchbot.txt",
+    "last_attempt": "2026-09-28T18:52:17Z",
+    "status": "ok",
+    "prefixes": 816,
+    "last_success": "2026-09-28T18:52:17Z",
+    "error": null
+  },
+  "amzn-user": {
+    "url": "https://developer.amazon.com/amazonbot/live-ip-addresses/",
+    "snapshot": "amzn-user.txt",
+    "last_attempt": "2026-09-28T18:52:17Z",
+    "status": "ok",
+    "prefixes": 1023,
+    "last_success": "2026-09-28T18:52:17Z",
+    "error": null
+  },
+  "anthropic": {
+    "url": "https://claude.com/crawling/bots.json",
+    "snapshot": "anthropic-bots.json",
+    "last_attempt": "2026-09-28T18:52:17Z",
+    "status": "ok",
+    "prefixes": 26,
+    "last_success": "2026-09-28T18:52:17Z",
+    "error": null
+  },
+  "applebot": {
+    "url": "https://search.developer.apple.com/applebot.json",
+    "snapshot": "applebot.json",
+    "last_attempt": "2026-09-28T18:52:17Z",
+    "status": "ok",
+    "prefixes": 24,
+    "last_success": "2026-09-28T18:52:17Z",
+    "error": null
+  },
+  "google-special-crawlers": {
+    "url": "https://developers.google.com/static/search/apis/ipranges/special-crawlers.json",
+    "snapshot": "google-special-crawlers.json",
+    "last_attempt": "2026-09-28T18:52:17Z",
+    "status": "ok",
+    "prefixes": 272,
+    "last_success": "2026-09-28T18:52:17Z",
+    "error": null
+  },
+  "google-user-triggered-fetchers": {
+    "url": "https://developers.google.com/static/search/apis/ipranges/user-triggered-fetchers.json",
+    "snapshot": "google-user-triggered-fetchers.json",
+    "last_attempt": "2026-09-28T18:52:17Z",
+    "status": "ok",
+    "prefixes": 1058,
+    "last_success": "2026-09-28T18:52:17Z",
+    "error": null
+  },
+  "google-user-triggered-fetchers-google": {
+    "url": "https://developers.google.com/static/search/apis/ipranges/user-triggered-fetchers-google.json",
+    "snapshot": "google-user-triggered-fetchers-google.json",
+    "last_attempt": "2026-09-28T18:52:17Z",
+    "status": "ok",
+    "prefixes": 500,
+    "last_success": "2026-09-28T18:52:17Z",
+    "error": null
+  },
+  "googlebot": {
+    "url": "https://developers.google.com/static/search/apis/ipranges/googlebot.json",
+    "snapshot": "googlebot.json",
+    "last_attempt": "2026-09-28T18:52:17Z",
+    "status": "ok",
+    "prefixes": 317,
+    "last_success": "2026-09-28T18:52:17Z",
+    "error": null
+  },
+  "openai-adsbot": {
+    "url": "https://openai.com/adsbot.json",
+    "snapshot": "adsbot.json",
+    "last_attempt": "2026-09-28T18:52:17Z",
+    "status": "ok",
+    "prefixes": 2,
+    "last_success": "2026-09-28T18:52:17Z",
+    "error": null
+  },
+  "openai-chatgpt-user": {
+    "url": "https://openai.com/chatgpt-user.json",
+    "snapshot": "chatgpt-user.json",
+    "last_attempt": "2026-09-28T18:52:17Z",
+    "status": "ok",
+    "prefixes": 230,
+    "last_success": "2026-09-28T18:52:17Z",
+    "error": null
+  },
+  "openai-gptbot": {
+    "url": "https://openai.com/gptbot.json",
+    "snapshot": "gptbot.json",
+    "last_attempt": "2026-09-28T18:52:17Z",
+    "status": "ok",
+    "prefixes": 18,
+    "last_success": "2026-09-28T18:52:17Z",
+    "error": null
+  },
+  "openai-searchbot": {
+    "url": "https://openai.com/searchbot.json",
+    "snapshot": "searchbot.json",
+    "last_attempt": "2026-09-28T18:52:17Z",
+    "status": "ok",
+    "prefixes": 39,
+    "last_success": "2026-09-28T18:52:17Z",
+    "error": null
+  },
+  "perplexity-user": {
+    "url": "https://www.perplexity.ai/perplexity-user.json",
+    "snapshot": "perplexity-user.json",
+    "last_attempt": "2026-09-28T18:52:17Z",
+    "status": "ok",
+    "prefixes": 4,
+    "last_success": "2026-09-28T18:52:17Z",
+    "error": null
+  },
+  "perplexitybot": {
+    "url": "https://www.perplexity.ai/perplexitybot.json",
+    "snapshot": "perplexitybot.json",
+    "last_attempt": "2026-09-28T18:52:17Z",
+    "status": "ok",
+    "prefixes": 8,
+    "last_success": "2026-09-28T18:52:17Z",
+    "error": null
+  }
+}

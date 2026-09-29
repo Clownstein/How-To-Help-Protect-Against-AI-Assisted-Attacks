@@ -1,0 +1,26 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+BEGIN {
+    $SIG{__DIE__} = sub {
+        return if $^S;
+        my $message = join '', @_;
+        $message =~ s/&/&amp;/g;
+        $message =~ s/</&lt;/g;
+        $message =~ s/>/&gt;/g;
+        print '<pre>', $message, '</pre>';
+        exit 0;
+    };
+}
+use FindBin;
+use lib "$FindBin::Bin/../lib";
+use ProtectFromAI;
+
+my ($username, $home) = (getpwuid $<)[0, 7];
+ProtectFromAI::handle(
+    root     => "$FindBin::Bin/..",
+    embedded => 1,
+    scope    => 'user',
+    username => $username // '',
+    home     => $home // '',
+);

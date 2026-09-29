@@ -1,0 +1,20 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+use FindBin;
+use lib "$FindBin::Bin";
+use ProtectFromAI;
+my $root = "$FindBin::Bin/../wordpress/protect-from-ai";
+my $catalog = ProtectFromAI::load_json("$root/data/catalog.json");
+my $tokens = ProtectFromAI::preset_tokens($catalog, 'recommended');
+my $headers = ProtectFromAI::header_tokens($catalog, $tokens);
+die "Google-Extended was treated as a request header\n" if grep { $_ eq 'Google-Extended' } @{$headers};
+my $conf = ProtectFromAI::apache_conf($headers, '/var/lib/protect-from-ai/robots.txt');
+die "GPTBot missing from Apache rule\n" unless $conf =~ /GPTBot/;
+die "Google-Extended was added to the User-Agent rule\n" if $conf =~ /Google-Extended/;
+die "robots.txt is not exempted\n" unless $conf =~ /robots\\.txt/;
+my $kept = ProtectFromAI::known_tokens($catalog, ['GPTBot', 'NotARealBot']);
+die "unknown token was kept\n" unless @{$kept} == 1 && $kept->[0] eq 'GPTBot';
+my $map = ProtectFromAI::nginx_map($headers);
+die "nginx map missing\n" unless $map =~ /protect_from_ai_ua/ && $map =~ /GPTBot/;
+print "perl module ok\n";

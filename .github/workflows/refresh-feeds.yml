@@ -1,0 +1,82 @@
+name: Refresh crawler feeds
+
+on:
+  schedule:
+    # Monday 12:00 UTC. Crawler address lists change slowly.
+    - cron: "0 12 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-crawler-feeds
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Install PHP and Perl
+        run: sudo apt-get update && sudo apt-get install -y php-cli perl
+
+      - name: Download feeds and regenerate rules
+        id: refresh
+        run: python tools/refresh_feeds.py
+        continue-on-error: true
+
+      - name: Run tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Commit list changes
+        id: commit
+        run: |
+          git add -A
+          names="$(git diff --cached --name-only)"
+          if [ -z "$names" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          only_status=true
+          while IFS= read -r name; do
+            if [ "$name" != "data/inbound-bot-ips/refresh-status.json" ]; then
+              only_status=false
+            fi
+          done <<< "$names"
+          if [ "$only_status" = true ]; then
+            git reset -q
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Refresh crawler address feeds."
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          echo "revision=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Publish plugin packages
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python tools/package_plugins.py --dist dist --version "${{ steps.commit.outputs.revision }}"
+          gh release delete plugins --yes --cleanup-tag || true
+          gh release create plugins \
+            --target "${{ steps.commit.outputs.revision }}" \
+            --title "Plugin packages" \
+            --notes "Installable plugin archives rebuilt after the crawler feed refresh." \
+            dist/protect-from-ai-wordpress.zip \
+            dist/protect_from_ai.tar.gz \
+            dist/protect-from-ai-cpanel.tar.gz \
+            dist/release.json
+
+      - name: Fail when a feed could not be refreshed
+        if: steps.refresh.outcome == 'failure'
+        run: exit 1

@@ -1,0 +1,22 @@
+// AI inference response policy zone for BIND 9.
+//
+// 1. Copy ai-inference.rpz (or ai-inference-full.rpz) to /etc/bind/ai-inference.rpz.
+// 2. Add the response-policy statement to the existing options { } block.
+// 3. Add the zone statement at the top level of named.conf.
+// 4. Validate with:
+//      named-checkzone ai-inference.rpz /etc/bind/ai-inference.rpz
+//      named-checkconf
+//    and apply with "rndc reload".
+
+options {
+    response-policy {
+        zone "ai-inference.rpz" policy given log yes;
+    } qname-wait-recurse no;
+};
+
+zone "ai-inference.rpz" {
+    type primary;
+    file "/etc/bind/ai-inference.rpz";
+    allow-query { none; };
+    allow-transfer { none; };
+};

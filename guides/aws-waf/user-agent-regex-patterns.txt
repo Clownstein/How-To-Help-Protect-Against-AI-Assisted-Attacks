@@ -1,0 +1,4 @@
+gptbot|oai-searchbot|oai-adsbot|chatgpt-user|claudebot|claude-searchbot|claude-user|perplexitybot|perplexity-user|amazonbot|amzn-searchbot|amzn-user|ccbot|bytespider|meta-externalagent
+meta-externalfetcher|cohere-ai|mistralai-user|diffbot|apifywebsitecontentcrawler/|\+https://apify\.com/apify/website-content-crawler|chathivecrawler/|cledarabot/|devin/|\+https://devin\.ai
+duckassistbot/|\+http://duckduckgo\.com/duckassistbot\.html|easyscan/|google-agent|https://developers\.google\.com/crawling/docs/crawlers-fetchers/google-agent|grokagent|harkbot/|hifibot/
+\+https://hi\.fi|instapaper/|instaparser/|meta-externaltest/|nava/|qatechbot/|retool/|\+https://docs\.tryretool\.com/docs/apis|twinagent/|zipchatbot/|\+https://zipchat\.ai/bot
